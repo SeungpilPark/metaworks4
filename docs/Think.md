@@ -2,6 +2,11 @@
 
 #### 2015 11 25 수요일
 
+- 사내 서버를 탐방해봄
+- 메타웍스 튜토리얼을 진행해봄
+- 리액트 튜토리얼을 진행해봄
+- 바딘 튜토리얼 1일차
+
 리액트 튜토리얼을 진행해보고 소스코드를 올려본다.
 
 UI 콤포넌트 객체지향 컨트롤러라는게 결론.
@@ -19,6 +24,8 @@ javascript, html, java, css 이 네가지만.
 
 ```
 *jsx
+
+xml 돔 형식안에 엘리먼트 표현과 객체표현이 가능하다.
 
 var CommentBox = {};
 CommentBox.bbb = React.createClass({
@@ -53,6 +60,8 @@ ReactDOM.render(
 ```
 *js
 
+리액트 엘리먼트 표현을 스트링 처리해줘야 한다.
+
 var ExampleApplication = React.createClass({
         render: function() {
           var elapsed = Math.round(this.props.elapsed  / 100);
@@ -77,4 +86,20 @@ ReactDOM.render(
 
 
 ```
+
+
+##### 바딘 튜토리얼 진행 소감
+
+메타웤스가 지향하는 바를 저어만치 앞서나가는 것 같아서 먼 산 쳐다보는 느낌...
+
+CSS 관련사항에 대해 사용자가 알아서 하도록 theme scss 파일들로 분리시켜놓은것이 특히 너무 좋음..
+
+컴포넌트 add-on 이 상당히 활성화되있어서 좋다.
+
+ - vaadin 을 사용할경우 여기에 무엇을 덧붙여서 만들어나간다는것에 의미가 있는가?
+
+ - custom 스크립트및 html 적용의 과정이 아직은 뭐가뭔지 모르지만 지원하고 있으니 한번 파봐야겠다.
+
+
+
 
