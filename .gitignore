@@ -1,2 +1,93 @@
 .idea
 *.iml
+
+
+
+# vaadin
+# vaadin/
+vaadin/.classpath
+vaadin/.cvsignore
+vaadin/.project
+vaadin/.tomcatplugin
+vaadin/.settings
+vaadin/work
+vaadin/.gwt-cache
+vaadin/.externalToolBuilders
+vaadin/extras
+
+# vaadin/WebContent/VAADIN/themes/base/
+vaadin/WebContent/VAADIN/themes/base/styles.css
+vaadin/WebContent/VAADIN/themes/base/legacy-styles.css
+
+# vaadin/WebContent/VAADIN/themes/chameleon/
+vaadin/WebContent/VAADIN/themes/chameleon/styles.css
+vaadin/WebContent/VAADIN/themes/chameleon/legacy-styles.css
+
+# vaadin/WebContent/VAADIN/themes/liferay/
+vaadin/WebContent/VAADIN/themes/liferay/styles.css
+vaadin/WebContent/VAADIN/themes/liferay/legacy-styles.css
+
+# vaadin/WebContent/VAADIN/themes/reindeer/
+vaadin/WebContent/VAADIN/themes/reindeer/styles.css
+vaadin/WebContent/VAADIN/themes/reindeer/legacy-styles.css
+
+# vaadin/WebContent/VAADIN/themes/reindeer/button/img/
+vaadin/WebContent/VAADIN/themes/reindeer/button/img/*-sprites*.png
+
+# vaadin/WebContent/VAADIN/themes/reindeer/common/img/
+vaadin/WebContent/VAADIN/themes/reindeer/common/img/*-sprites*.png
+
+# vaadin/WebContent/VAADIN/themes/runo/
+vaadin/WebContent/VAADIN/themes/runo/styles.css
+vaadin/WebContent/VAADIN/themes/runo/legacy-styles.css
+
+# vaadin/WebContent/VAADIN/themes/runo/common/img/
+vaadin/WebContent/VAADIN/themes/runo/common/img/ajax-loader-red.gif
+vaadin/WebContent/VAADIN/themes/runo/common/img/ajax-loader-yellow.gif
+
+# vaadin/WebContent/VAADIN/themes/valo/
+vaadin/WebContent/VAADIN/themes/valo/styles.css
+vaadin/WebContent/VAADIN/themes/tests-valo*/styles.css
+
+# Persisted scss cache files
+vaadin/WebContent/VAADIN/themes/*/styles.scss.cache
+
+# vaadin/WebContent/VAADIN/widgetsets/
+vaadin/WebContent/VAADIN/widgetsets
+vaadin/WebContent/VAADIN/gwt-unitCache*
+
+vaadin/WebContent/VAADIN/vaadinPush.js
+vaadin/WebContent/VAADIN/vaadinPush.debug.js
+vaadin/WebContent/VAADIN/vaadinPush.js.gz
+vaadin/WebContent/VAADIN/vaadinPush.debug.js.gz
+
+# /WebContent/WEB-INF/
+vaadin/WebContent/WEB-INF/classes
+
+# vaadin/build/
+vaadin/build/result
+vaadin/build/gwt
+vaadin/build/checkout
+vaadin/build/classes
+vaadin/build/test-output
+vaadin/build/integration-test-output
+vaadin/build/buildhelpers/com/vaadin/buildhelpers/*.class
+
+# vaadin/tests/
+vaadin/tests/junit*.properties
+
+# vaadin/bin/
+vaadin/bin
+
+# Mac
+*.DS_Store
+
+# Python
+vaadin/scripts/*.pyc
+
+# build result folders
+* vaadin/result
+vaadin/result
+
+.sass-cache
+vaadin/phantomjsdriver.log
