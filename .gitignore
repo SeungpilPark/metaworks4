@@ -14,6 +14,7 @@ vaadin/work
 vaadin/.gwt-cache
 vaadin/.externalToolBuilders
 vaadin/extras
+vaadin/work
 
 # vaadin/WebContent/VAADIN/themes/base/
 vaadin/WebContent/VAADIN/themes/base/styles.css
@@ -63,6 +64,10 @@ vaadin/WebContent/VAADIN/vaadinPush.debug.js.gz
 
 # /WebContent/WEB-INF/
 vaadin/WebContent/WEB-INF/classes
+
+# all result
+vaadin/*/result
+vaadin/result
 
 # vaadin/build/
 vaadin/build/result

@@ -21,13 +21,13 @@ If you find something to improve, please send a pull request. There might be cak
 #### 1. Clone the vaadin repo
 ````sh
 
-cd metaworks4
+$ cd metaworks4
 
-git clone https://github.com/vaadin/vaadin.git
+$ git clone https://github.com/vaadin/vaadin.git
 
-cd vaadin
+$ cd vaadin
 
-rm -rf .git
+$ rm -rf .git
 
 ````
 
@@ -35,14 +35,14 @@ rm -rf .git
 brew 인스톨(mac os x)
 
 ```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ant 인스톨
 
 ```
-brew update
-brew install ant
+$ brew update
+$ brew install ant
 
 ```
 
@@ -53,14 +53,14 @@ ant 가 ivy 라이브러리를 가져올 수 있도록 다음 단계를 수행
 
 
 ```
-cp <ivy jar file path> /usr/local/Cellar/ant/1.9.6/libexec/lib/
+$ cp <ivy jar file path> /usr/local/Cellar/ant/1.9.6/libexec/lib/
 
 ```
 
 Intellij 에서도, ant 가 ivy 라이브러리를 가져올 수 있도록 다음 단계를 수행
 
 ```
-cp <ivy jar file path> /Applications/IntelliJ IDEA 14.app/Contents/lib/ant/lib/
+$ cp <ivy jar file path> /Applications/IntelliJ IDEA 14.app/Contents/lib/ant/lib/
 
 ```
 
@@ -74,7 +74,7 @@ cp <ivy jar file path> /Applications/IntelliJ IDEA 14.app/Contents/lib/ant/lib/
 In order for everything to work pretty, we need to compile and unpack GWT outside IDEA.
 ````sh
 
-ant -f gwt-files.xml unpack.gwt
+$ ant -f gwt-files.xml unpack.gwt
 
 Buildfile: /Users/uengine/IdeaProjects/metaworks4/vaadin/gwt-files.xml
 [ivy:resolve] :: Apache Ivy 2.4.0 - 20141213170938 :: http://ant.apache.org/ivy/ ::
@@ -90,6 +90,7 @@ unpack.gwt:
 
 BUILD SUCCESSFUL
 Total time: 9 seconds
+
 
 ````
 
@@ -115,52 +116,94 @@ Total time: 9 seconds
 ![ivyIDEA-setting](img/IvyIDEA-properties.png)
 
 #### 5. Add modules
+
+- Note! 아래 사항을 진행하면서, 모듈 임포트시에 test/src 를 제외합니다. test/src 는 추후에 별도 임포트 과정이 있습니다.
 - Select Import Module
   - Import vaadin/buildhelpers
-  - Resolve dependencies by selecting IvyIDEA -> Resolve for buildhelpers module
+  - Add gwt as Module dependencies
 - Repeat for module vaadin/gwt, vaadin/push, vaadin/shared
-  - Note! At this point, don't include test/src folder with the modules. We will import those later.
-  - For push and gwt we need to export their dependencies. Unfortunately that can't be done through the settings GUI, so we need to modify their .iml files. ````<orderEntry type="module-library">```` needs to be changed to ````<orderEntry type="module-library" exported="">````
+  - Add gwt as Module dependencies for vaadin/shared
+
 - Import Module vaadin/server
   - Add gwt, push, shared as Module dependencies (if they aren't automatically added)
+
+![add-module-depends1](img/add-module-depends1.png)
+
+![add-module-depends2](img/add-module-depends2.png)
+
 - Import Module vaadin/client
-  - Exclude GWT facets (the GWT 4 xml files)
+  - GWT facets 는 제외하도록 합니다.
+
+![gwt-unselect](img/gwt-unselect.png)
+
   - Add gwt, shared, server as dependencies (if they aren't automatically added)
+
+- Import module vaadin/client-compiler
+  - Add dependencies to client, shared, gwt, server (if they aren't automatically added)
+
+- Import module vaadin/server/tests
+  - Rename the module to server-tests (optional)
+  - Mark src folder as Sources instead of Tests in Module Settings -> Sources
+
+![test-source](img/test-source.png)
+
+  - Manually add IvyIDEA facet that points to vaadin/server/ivy.xml
+
+![add-ivy-facet](img/add-ivy-facet.png)
+
+![add-ivy-point](img/add-ivy-point.png)
+
+  - Add dependencies to shared, push, gwt, server (if they aren't automatically added)
+
+- Import module vaadin/uitest
+  - Ignore GWT facet
+  - Add dependencies to all modules we have imported
+
+- Change the output path to build/classes for modules buildhelpers, client, shared, server,server-test, client-compiler, uitest (for Testing widgetset)
+  - Module settings -> Paths
+
+![build-path](img/build-path.png)
+
+- Resolve dependencies by selecting IvyIDEA -> Resolve for buildhelpers module
+
+![Ivy-resolve](img/Ivy-resolve.png)
+
+- For push and gwt we need to export their dependencies. Unfortunately that can't be done through the settings GUI, so we need to modify their .iml files. ````<orderEntry type="module-library">```` needs to be changed to ````<orderEntry type="module-library" exported="">````
+
 
 > Unfortunately we can't use the builtin GWT features because our sources for the widgetset is divided between two modules: shared + client.
 
 > IDEA 13 seems to have occasional difficulties when importing modules without "content" (gwt,push modules)
 
-#### <a name="widgetset"></a>6. Getting the widgetset to compile
-- Import module vaadin/client-compiler
-  - Add dependencies to client, shared, gwt, server (if they aren't automatically added)
-- Change the output path to build/classes for modules buildhelpers, client, shared, server, client-compiler, uitest (for Testing widgetset)
-  - Module settings -> Paths
-- Open the Ant Build window from View -> Tool Windows -> Ant Build
-  - Add vaadin/build/ide.xml
-- Run targets from ide.xml
-
-> build/classes is the path ide.xml searches for classes when compiling the widgetset.
 
 ### Setting up debugging
-#### <a name="devserver"></a>7. Running the Development Server
-- Import module vaadin/server/tests
-  - Rename the module to server-tests (optional)
-  - Mark src folder as Sources instead of Tests in Module Settings -> Sources
-  - Manually add IvyIDEA facet that points to vaadin/server/ivy.xml
-  - Add dependencies to shared, push, gwt, server (if they aren't automatically added)
-- Import module vaadin/uitest
-  - Ignore GWT facet
-  - Add dependencies to all modules we have imported
+#### <a name="devserver"></a>6. Running the Development Server
 - Add Run Configuration from Run -> Edit Configurations
   - Add -> Application
   - Main class: com.vaadin.launcher.DevelopmentServerLauncher
   - VM options: -ea
   - Use classpath of module: uitest
   - Select Single Instance only
+
+![run-conf](img/run-conf.png)
+
 - Run the configuration
 
 > We need to define sources inside server-tests and uitest as __sources__ instead of __tests__ because otherwise they won't be included in the module classpath when using the module as a dependency.
+
+> 이 단계에서 브라우저 테스트를 하는 동안 widgetset 관련 에러가 발생하나 7번 과정을 수행하면 정상적으로 돌아갑니다.
+
+#### <a name="widgetset"></a>7. Getting the widgetset to compile
+
+
+- Open the Ant Build window from View -> Tool Windows -> Ant Build
+  - Add vaadin/build/ide.xml
+- Run targets from ide.xml
+
+> build/classes is the path ide.xml searches for classes when compiling the widgetset.
+
+> 6번 단계를 먼저 실행하여 vaadin/build/classes 에 필요 클래스들을 구성해야 수행됩니다.
+
 
 #### <a name="superdevmode"></a>8. Running CodeServer for Super DevMode
 > This is a bit tricky because we need source directories from multiple modules to be added to the classpath and IDEA doesn't really support that. So we basically need to use a custom classpath:
