@@ -183,6 +183,7 @@ Total time: 9 seconds
   - Main class: com.vaadin.launcher.DevelopmentServerLauncher
   - VM options: -ea
   - Use classpath of module: uitest
+  - Working directory를 vaadin 폴더로 설정합니다.
   - Select Single Instance only
 
 ![run-conf](img/run-conf.png)
@@ -204,6 +205,7 @@ Total time: 9 seconds
 
 > 6번 단계를 먼저 실행하여 vaadin/build/classes 에 필요 클래스들을 구성해야 수행됩니다.
 
+> http://localhost:8888/run/com.vaadin.tests.components.label.LabelModes?restartApplication 를 통하여 테스트를 수행합니다.
 
 #### <a name="superdevmode"></a>8. Running CodeServer for Super DevMode
 > This is a bit tricky because we need source directories from multiple modules to be added to the classpath and IDEA doesn't really support that. So we basically need to use a custom classpath:
