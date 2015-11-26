@@ -1,4 +1,4 @@
-## 12 Steps to a Vaadin Framework on IntelliJ IDEA 14
+## IntelliJ IDEA 14 에서 Vaadin Framework 개발환경 구축하기
 
 Here's instructions on how to get you up and running with Vaadin (7.3.x) development using IntelliJ IDEA 14.
 If you find something to improve, please send a pull request. There might be cake available for all who contribute.
@@ -7,8 +7,8 @@ If you find something to improve, please send a pull request. There might be cak
 
 ### Table of Contents
 * Compile [Vaadin](#compile)
-* Compile [Themes](#themes) and [Widgetset](#widgetset) (use the Ant build window)
 * Run [Development Server](#devserver)
+* Compile [Themes](#themes) and [Widgetset](#widgetset) (use the Ant build window)
 * Run [CodeServer for Super DevMode](#superdevmode)
 * [Debug client side inside IDEA (Firefox/Chrome)](#debug)
 * Run [Unit tests](#unittests)
@@ -20,7 +20,15 @@ If you find something to improve, please send a pull request. There might be cak
 
 #### 1. Clone the vaadin repo
 ````sh
+
+cd metaworks4
+
 git clone https://github.com/vaadin/vaadin.git
+
+cd vaadin
+
+rm -rf .git
+
 ````
 
 
@@ -49,27 +57,62 @@ cp <ivy jar file path> /usr/local/Cellar/ant/1.9.6/libexec/lib/
 
 ```
 
+Intellij 에서도, ant 가 ivy 라이브러리를 가져올 수 있도록 다음 단계를 수행
+
+```
+cp <ivy jar file path> /Applications/IntelliJ IDEA 14.app/Contents/lib/ant/lib/
+
+```
+
 
 
 #### 2. Unpack GWT
+
+아래 사항부터는 vaadin 디렉토리 안에서 수행하도록 합니다.
+
+
 In order for everything to work pretty, we need to compile and unpack GWT outside IDEA.
 ````sh
+
 ant -f gwt-files.xml unpack.gwt
+
+Buildfile: /Users/uengine/IdeaProjects/metaworks4/vaadin/gwt-files.xml
+[ivy:resolve] :: Apache Ivy 2.4.0 - 20141213170938 :: http://ant.apache.org/ivy/ ::
+[ivy:resolve] :: loading settings :: file = /Users/uengine/IdeaProjects/metaworks4/vaadin/ivysettings.xml
+
+unpack.gwt:
+    [mkdir] Created dir: /Users/uengine/IdeaProjects/metaworks4/vaadin/build/gwt/gwt-user.jar
+    [mkdir] Created dir: /Users/uengine/IdeaProjects/metaworks4/vaadin/build/gwt/gwt-dev.jar
+    [mkdir] Created dir: /Users/uengine/IdeaProjects/metaworks4/vaadin/build/gwt/gwt-elemental.jar
+    [unzip] Expanding: /Users/uengine/.ivy2/cache/com.vaadin.external.gwt/gwt-user/jars/gwt-user-2.7.0.vaadin3.jar into /Users/uengine/IdeaProjects/metaworks4/vaadin/build/gwt/gwt-user.jar
+    [unzip] Expanding: /Users/uengine/.ivy2/cache/com.vaadin.external.gwt/gwt-dev/jars/gwt-dev-2.7.0.vaadin3.jar into /Users/uengine/IdeaProjects/metaworks4/vaadin/build/gwt/gwt-dev.jar
+    [unzip] Expanding: /Users/uengine/.ivy2/cache/com.vaadin.external.gwt/gwt-elemental/jars/gwt-elemental-2.7.0.vaadin3.jar into /Users/uengine/IdeaProjects/metaworks4/vaadin/build/gwt/gwt-elemental.jar
+
+BUILD SUCCESSFUL
+Total time: 9 seconds
+
 ````
 
 ### Getting the first modules to compile
-#### 3. Open vaadin folder in IDEA
+#### 3. Open metaworks4 folder in IDEA
 (ignore possible warnings about missing JDK JavaSE-1.6)
+
 
 #### 4. Setup project
 - Open project properties
   - Select SDK of your choosing in Project -> Project SDK (tested to work with 1.7.0_51)
   - Set Project Compiler Output to vaadin/build/classes in Project -> Project compiler output
   - Delete Module vaadin from Modules
+
 - Open IDEA Preferences
   - Open Project Preferences for IvyIDEA
-  - Set Ivy Settings to use vaadin/ivysettings.xml
-  - Add vaadin/build.properties using Properties -> Add File
+  - Set Ivy Settings to use <project path>/vaadin/ivysettings.xml
+
+![ivyIDEA-setting](img/IvyIDEA-setting.png)
+
+  - Add <project path>/vaadin/build.properties using Properties -> Add File
+
+![ivyIDEA-setting](img/IvyIDEA-properties.png)
 
 #### 5. Add modules
 - Select Import Module
