@@ -20,29 +20,6 @@ var Comment = React.createClass({
         }
 });
 
-var Comment = React.createClass({
-    rawMarkup: function() {
-        var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
-        return { __html: rawMarkup };
-    },
-    render: function() {
-        return (
-            <div class="row margin-bottom-10">
-                <div class="col-sm-4">
-                    <div className="service-block service-block-default comment">
-                        <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
-                        <h2 className="commentAuthor heading-md">
-                            {this.props.author}
-                        </h2>
-                        <span dangerouslySetInnerHTML={this.rawMarkup()} />
-                    </div>
-                </div>
-            </div>
-        );
-    }
-});
-
-
 var CommentList = React.createClass({
     render: function() {
         var commentNodes = this.props.data.map(function(comment) {
@@ -101,7 +78,7 @@ var CommentForm = React.createClass({
             onClick={this.handleTextClick}
             />
             <input type="submit" value="Post" />
-    </form>
+            </form>
         );
     }
 });
