@@ -20,6 +20,28 @@ var Comment = React.createClass({
         }
 });
 
+var Comment = React.createClass({
+    rawMarkup: function() {
+        var rawMarkup = marked(this.props.children.toString(), {sanitize: true});
+        return { __html: rawMarkup };
+    },
+    render: function() {
+        return (
+            <div class="row margin-bottom-10">
+                <div class="col-sm-4">
+                    <div className="service-block service-block-default comment">
+                        <i class="icon-custom rounded icon-color-dark icon-line icon-badge"></i>
+                        <h2 className="commentAuthor heading-md">
+                            {this.props.author}
+                        </h2>
+                        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+                    </div>
+                </div>
+            </div>
+        );
+    }
+});
+
 
 var CommentList = React.createClass({
     render: function() {
@@ -117,7 +139,6 @@ var CommentBox = React.createClass({
     },
     componentDidMount: function() {
         this.loadCommentsFromServer();
-        setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     },
     render: function() {
         return (
@@ -132,6 +153,6 @@ var CommentBox = React.createClass({
 
 
 ReactDOM.render(
-    <CommentBox url="/resources/api/comments.json" pollInterval={2000} />,
+    <CommentBox url="/resources/api/comments.json" />,
     document.getElementById('content')
 );
