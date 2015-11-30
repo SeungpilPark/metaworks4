@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.uengine.web.system.UserRepository">
+
+    <!-- ==================================================================================== -->
+    <!-- 1. Result and Parameter Maps -->
+    <!-- ==================================================================================== -->
+
+    <resultMap id="userMap" type="io.uengine.model.User">
+        <result property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="email" column="EMAIL" jdbcType="VARCHAR"/>
+        <result property="password" column="PASSWD" jdbcType="VARCHAR"/>
+        <result property="name" column="NM" jdbcType="VARCHAR"/>
+        <result property="firstname" column="FIRSTNAME" jdbcType="VARCHAR"/>
+        <result property="lastname" column="LASTNAME" jdbcType="VARCHAR"/>
+        <result property="company" column="COMPANY" jdbcType="VARCHAR"/>
+        <result property="phone" column="PHONE" jdbcType="VARCHAR"/>
+        <result property="officePhone" column="OFFICE_PHONE" jdbcType="VARCHAR"/>
+        <result property="address" column="ADDRESS" jdbcType="VARCHAR"/>
+        <result property="description" column="DESCRIPTION" jdbcType="VARCHAR"/>
+        <result property="registerDate" column="REG_DT" jdbcType="TIMESTAMP"/>
+        <result property="updateDate" column="UPD_DT" jdbcType="TIMESTAMP"/>
+        <result property="enabled" column="ENABLED" jdbcType="BOOLEAN"/>
+        <result property="level" column="LEVEL" jdbcType="SMALLINT"/>
+        <result property="firstName" column="FIRST_NAME" jdbcType="VARCHAR"/>
+        <result property="lastName" column="LAST_NAME" jdbcType="VARCHAR"/>
+        <result property="organization" column="ORGANIZATION" jdbcType="VARCHAR"/>
+        <result property="country" column="COUNTRY" jdbcType="VARCHAR"/>
+        <result property="countryName" column="COUNTRY_NAME" jdbcType="VARCHAR"/>
+        <result property="address1" column="ADDRESS1" jdbcType="VARCHAR"/>
+        <result property="address2" column="ADDRESS2" jdbcType="VARCHAR"/>
+        <result property="city" column="CITY" jdbcType="VARCHAR"/>
+        <result property="state" column="STATE" jdbcType="VARCHAR"/>
+        <result property="zip" column="ZIP" jdbcType="VARCHAR"/>
+        <result property="phone" column="PHONE" jdbcType="VARCHAR"/>
+        <result property="taxid" column="TAXID" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- ==================================================================================== -->
+    <!-- 2. Sql Fragments -->
+    <!-- ==================================================================================== -->
+
+    <sql id="whereID">WHERE ID = #{id}</sql>
+    <sql id="wherePK">WHERE EMAIL = #{email}</sql>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Select Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="selectByUserId" parameterType="java.lang.Long" resultMap="userMap">
+        SELECT *
+        FROM CL_USER
+        <include refid="whereID"/>
+    </select>
+
+    <select id="selectByUserEmail" parameterType="string" resultMap="userMap">
+        SELECT *
+        FROM CL_USER user
+        LEFT OUTER JOIN
+        CL_COUNTRY country ON user.COUNTRY = country.CODE
+        <include refid="wherePK"/>
+    </select>
+
+    <select id="selectAll" parameterType="map" resultType="org.apache.commons.collections.map.CaseInsensitiveMap">
+        SELECT
+        usr.ID as user_id,
+        usr.EMAIL as email,
+        usr.NM as name,
+        usr.DESCRIPTION as user_description,
+        usr.REG_DT as register_date,
+        usr.UPD_DT as update_date,
+        usr.ENABLED,
+        usr.LEVEL as level,
+        auth.ID as auth_id,
+        auth.EMAIL as auth_email,
+        auth.AUTHORITY as authority,
+        auth.AUTHORITY_NM as auth_name
+        FROM CL_USER usr, CL_AUTHORITIES auth, CL_USER_LEVEL ulvl
+        WHERE usr.EMAIL = auth.EMAIL
+        AND usr.LEVEL = ulvl.LEVEL
+        <if test="conditionKey == 'EMAIL'">
+            AND usr.EMAIL = #{condition}
+        </if>
+        <if test="conditionKey == 'NAME'">
+            AND usr.NM = #{condition}
+        </if>
+        <if test="conditionKey == 'LEVEL'">
+            AND usr.LEVEL = #{condition}
+        </if>
+    </select>
+
+    <select id="selectUserIdByUserEmail" parameterType="string" resultType="Long">
+        SELECT ID as USER_ID
+        FROM CL_USER
+        <include refid="wherePK"/>
+    </select>
+
+    <select id="selectPasswordByUserEmail" parameterType="string" resultType="String">
+        SELECT PASSWD
+        FROM CL_USER
+        <include refid="wherePK"/>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 3. Exist Statement -->
+    <!-- ==================================================================================== -->
+
+    <select id="exist" parameterType="string" resultType="Integer">
+        SELECT COUNT(1)
+        FROM CL_USER
+        <include refid="wherePK"/>
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 4. Insert Statements -->
+    <!-- ==================================================================================== -->
+
+    <select id="insertByUser" parameterType="map">
+        INSERT INTO CL_USER (EMAIL, PASSWD, NM, COUNTRY, UPD_DT)
+        VALUES (
+            #{email},
+            #{password},
+            #{name},
+            #{country},
+            NOW()
+        )
+    </select>
+
+    <select id="insertByManager" parameterType="map">
+        INSERT INTO CL_USER (EMAIL, PASSWD, NM, UPD_DT, LEVEL)
+        VALUES (
+            #{email},
+            #{password},
+            #{name},
+            NOW(),
+            #{level}
+        )
+    </select>
+
+    <select id="insertByAuth" parameterType="long">
+        INSERT INTO CL_AUTHORITIES (USER_ID)
+        VALUES (
+        #{userId}
+        )
+    </select>
+
+    <!-- ==================================================================================== -->
+    <!-- 5. Update Statements -->
+    <!-- ==================================================================================== -->
+
+    <update id="updateUserInfo" parameterType="map">
+        UPDATE CL_USER
+        <set>
+            <if test="password != '' and password != null">
+                PASSWD = #{password},
+            </if>
+            <if test="name != '' and name != null">
+                NM = #{name},
+            </if>
+            <if test="level != '' and level != null">
+                LEVEL = #{level},
+            </if>
+            <if test="email != '' and email != null">
+                EMAIL = #{email},
+            </if>
+            UPD_DT = CURRENT_TIMESTAMP
+        </set>
+        <include refid="wherePK"/>
+    </update>
+
+    <select id="updateByAck" parameterType="string">
+        UPDATE CL_USER
+        SET
+        ENABLED = TRUE,
+        UPD_DT = CURRENT_TIMESTAMP
+        <include refid="wherePK"/>
+
+    </select>
+
+    <update id="updatePassword" parameterType="map">
+        UPDATE CL_USER
+        SET
+        PASSWD = #{password},
+        UPD_DT = CURRENT_TIMESTAMP
+        <include refid="wherePK"/>
+    </update>
+
+    <!-- ==================================================================================== -->
+    <!-- 6. Delete Statements -->
+    <!-- ==================================================================================== -->
+
+    <delete id="deleteByEmail" parameterType="string">
+        DELETE FROM CL_USER
+        <include refid="wherePK"/>
+    </delete>
+
+</mapper>

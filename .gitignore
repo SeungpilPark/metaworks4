@@ -1,10 +1,9 @@
 .idea
 *.iml
 
-
+*/target
 
 # vaadin
-# vaadin/
 vaadin/.classpath
 vaadin/.cvsignore
 vaadin/.project
@@ -15,6 +14,8 @@ vaadin/.gwt-cache
 vaadin/.externalToolBuilders
 vaadin/extras
 vaadin/work
+vaadin/eclipse
+vaadin/WebContent
 
 # vaadin/WebContent/VAADIN/themes/base/
 vaadin/WebContent/VAADIN/themes/base/styles.css

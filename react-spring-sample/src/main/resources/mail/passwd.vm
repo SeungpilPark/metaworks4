@@ -1,0 +1,405 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Download</title>
+
+    <style type="text/css">
+        .ReadMsgBody {
+            width: 100%;
+            background-color: #ffffff;
+        }
+
+        .ExternalClass {
+            width: 100%;
+            background-color: #ffffff;
+        }
+
+        body {
+            width: 100%;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        @media only screen and (max-width: 640px) {
+            body[yahoo] .deviceWidth {
+                width: 440px !important;
+                padding: 0;
+            }
+
+            body[yahoo] .center {
+                text-align: center !important;
+            }
+        }
+
+        @media only screen and (max-width: 479px) {
+            body[yahoo] .deviceWidth {
+                width: 280px !important;
+                padding: 0;
+            }
+
+            body[yahoo] .center {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" yahoo="fix"
+      style="font-family: Arial, Helvetica, sans-serif">
+
+<!-- Wrapper -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+        <td width="100%" valign="top" bgcolor="#ffffff" style="padding-top:20px">
+
+            <!--Start Header-->
+            <table width="700" bgcolor="#fff" border="0" cellpadding="0" cellspacing="0" align="center"
+                   class="deviceWidth">
+                <tr>
+                    <td style="padding: 6px 0px 0px">
+                        <table width="650" border="0" cellpadding="0" cellspacing="0" align="center"
+                               class="deviceWidth">
+                            <tr>
+                                <td width="100%">
+                                    <!--Start logo-->
+                                    <table border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
+                                        <tr>
+                                            <td class="center" style="padding: 20px 0px 10px 0px">
+                                                <a href="http://www.uengine.io"><img
+                                                        src="http://www.uengine.io/resources/email/img/header-uengine.png"></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <!--End logo-->
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--End Header-->
+
+            <!--Start Midlle Picture -->
+            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
+                <tr>
+                    <td width="100%" valign="top" style="padding: 40px 20px 10px " class="center">
+                        <a href="http://www.uengine.io">
+                            <img class="deviceWidth" width="660" hight="264"
+                                 src="http://www.uengine.io/resources/email/img/banner.jpg">
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center"
+                               class="deviceWidth">
+                            <tr>
+                                <td class="center"
+                                    style="font-size: 16px; color: #303030; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 10px 20px 0; ">
+                                    패스워드 변경 확인 페이지로 이동합니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center"
+                                    style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 20px; ">
+                                    Flamingo는 Apache Hadoop EcoSystem을 기반으로한 빅데이터 인프라 환경을 보다 편리하고 분석 및 개발에 집중할 수 있으면서,
+                                    다양한 사용자들이 협업할 수 있는 환경을 제공해주는 빅데이터 플랫폼입니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=" padding: 0 0 20px 20px;">
+                                    <table align="center">
+                                        <tr>
+                                            <td valign="top"
+                                                style="padding: 7px 15px; text-align: center; background-color: #4765a0;"
+                                                class="center">
+                                                <a style="color: #fff; font-size: 12px; font-weight: bold; text-decoration: none; font-family: Arial, sans-serif; text-alight: center;"
+                                                   href="${link}">패스워드변경</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+            </table>
+            <!--End Midlle Picture -->
+
+            <!--Start Two Texts-->
+            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
+                <tr>
+                    <td width="100%" bgcolor="#f7f7f7">
+                        <!--Left box-->
+                        <table width="50%" border="0" cellpadding="0" cellspacing="0" align="left" class="deviceWidth">
+                            <tr>
+                                <td class="center">
+                                    <table cellpadding="0" cellspacing="0" align="center">
+                                        <tr>
+                                            <td class="center"
+                                                style="font-size: 16px; color: #303030; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 30px 20px 10px;">
+                                                Subscription
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                연단위 기술지원
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                소프트웨어 버그 및 패치
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                Hadoop 개발 및 운영 교육 지원
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                매월 현장 정기점검
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                On-Site 기술 지원
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                온라인 기술 지원
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                커스터마이징은 별도 비용 청구
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                고객사에 소스코드 제공
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                제품명 변경 불가
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                Subscription 라이센스는 연단위 계약을 통해 Flamingo의 기술지원을 받는 서비스입니다.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=" padding: 0 0 20px 0;">
+                                    <table align="center">
+                                        <tr>
+                                            <td valign="top"
+                                                style="padding: 7px 15px; text-align: center; background-color: #4765a0;"
+                                                class="center">
+                                                <a style="color: #fff; font-size: 12px; font-weight: bold; text-decoration: none; font-family: Arial, sans-serif; text-alight: center;"
+                                                   href="http://www.uengine.io/product/flamingo#license">문의 및 견적요청</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table width="50%" border="0" cellpadding="0" cellspacing="0" align="right" class="deviceWidth">
+                            <tr>
+                                <td class="center">
+                                    <table cellpadding="0" cellspacing="0" align="center">
+                                        <tr>
+                                            <td class="center"
+                                                style="font-size: 16px; color: #303030; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 30px 20px 10px;">
+                                                OEM
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                도메인 전문기업과 협업
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                Flamingo 이름 변경 허용
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                각 도메인별 1개 전문기업만 허용
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                프로젝트별 라이센스 적용
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                전문기업의 On-Site 기술지원
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                온라인 기술 지원
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                도메인 전문기업의 라이센스 방식에 따른 비용 책정
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                고객사에 소스코드 제공
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                제품명 변경가능 (단, Flamingo 기반 임을 명시해야함)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center deviceWidth"
+                                                style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 15px; vertical-align: middle; padding: 10px 20px 20px; ">
+                                                도메인 전문기업이 Flamingo를 커스터마이징 하는 경우 적용되는 라이센스입니다.
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=" padding: 0 0 20px 0;">
+                                    <table align="center">
+                                        <tr>
+                                            <td valign="top"
+                                                style="padding: 7px 15px; text-align: center; background-color: #4765a0;"
+                                                class="center">
+                                                <a style="color: #fff; font-size: 12px; font-weight: bold; text-decoration: none; font-family: Arial, sans-serif; text-alight: center;"
+                                                   href="http://www.uengine.io/product/flamingo#license">문의 및 견적요청</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--End Right box-->
+                    </td>
+                </tr>
+            </table>
+            <!--End Two Texts-->
+
+            <!--Start Support-->
+            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
+                <tr>
+                    <td width="100%" bgcolor="#a5d1da" class="center">
+                        <table border="0" cellpadding="0" cellspacing="0" align="center">
+                            <tr>
+                                <td valign="top" style="padding: 20px 10px " class="center">
+                                    <img width="60" hight="60"
+                                         src="http://www.uengine.io/resources/email/img/icons/icon_support.png">
+                                </td>
+                            </tr>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" align="center">
+                            <tr>
+                                <td class="center"
+                                    style="font-size: 16px; color: #ffffff; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 0px 10px; ">
+                                    24 Hour Support
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center"
+                                    style="font-size: 12px; color: #ffffff; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px; ">
+                                    uengine Inc는 2011년도에 설립한 빅데이터 관련 오픈소스를 개발하고 배포하는 오픈소스 기업으로서 빅데이터 플랫폼인 Flamingo,
+                                    클라우드
+                                    오케스트레이터인 Bahamas를 오픈소스 라이센스인 GPL v3로 개발하고 있으며 고객에서 관련 기술에 대한 컨설팅, 개발, 구축 등의 업무를 수행하고
+                                    있습니다.
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!--End Support-->
+
+            <!-- Footer -->
+            <table width="700" border="0" cellpadding="0" cellspacing="0" align="center" class="deviceWidth">
+                <tr>
+                    <td class="center"
+                        style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px 0px; ">
+                        서울시 강남구 삼성동 122-30 호경빌딩 2층
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center"
+                        style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px 0px; ">
+                        전화번호: (+82) 70-8806-3735
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center"
+                        style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px 0px; ">
+                        서울시 강남구 삼성동 122-30 호경빌딩 2층
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center"
+                        style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px 0px; ">
+                        팩스: (+82) 2-556-3402
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center"
+                        style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 10px 0px; ">
+                        전자우편: support@uengine.co.kr
+                    </td>
+                </tr>
+                <tr>
+                    <td class="center"
+                        style="font-size: 12px; color: #687074; font-weight: bold; text-align: center; font-family: Arial, Helvetica, sans-serif; line-height: 25px; vertical-align: middle; padding: 20px 50px 0px 50px; ">
+                        2015 © All Rights Reserved.
+                    </td>
+                </tr>
+            </table>
+            <!--End Footer-->
+
+            <div style="height:15px">&nbsp;</div>
+            <!-- divider-->
+        </td>
+    </tr>
+</table>
+<!-- End Wrapper -->
+</body>
+</html>

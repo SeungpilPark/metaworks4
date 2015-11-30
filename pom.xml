@@ -8,12 +8,12 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>Metaworks Project</name>
-    <url>http://www.cloudine.io</url>
+    <url>http://www.uengine.io</url>
 
     <modules>
 
         <module>metaworks4-core</module>
-        <module>metaworks4-web</module>
+        <module>react-spring-sample</module>
     </modules>
 
     <properties>
